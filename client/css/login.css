@@ -1,0 +1,131 @@
+body, 
+*, 
+li, 
+ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#login-register, #dashboard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#login-register {
+  background-image: 
+    linear-gradient(to right,
+    rgba(68, 103, 216, .4),
+    rgba(0, 0, 0, .4)),
+    url('../img/bg-auth.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px
+}
+
+#login-register-box {
+  width: 100%;
+  max-width: 920px;
+  height: 500px;
+}
+
+#login-left, #register-left {
+  border-radius: 10px 0 0 10px;
+  /* background-color: rgba(0, 0, 0, .5); */
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  z-index: 1;
+}
+
+#login-right, #register-right{
+  position: relative;
+  padding: 17px 17px 17px 0;
+}
+
+#desc-login, #desc-register {
+  background-color: rgba(60, 34, 107, 0.9);
+  position: relative;
+  height: 100%;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(60, 34, 107, 0.9);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(60, 34, 107, 0.9);
+  box-shadow: 0px 0px 15px 0px rgba(29, 16, 53, 0.9);
+}
+
+#login-box, #register-box {
+  padding: 40px;
+}
+
+#login-header, #register-header {
+  text-align: center;
+  margin-bottom: 50px;
+  color: rgba(0, 0, 0, .7);
+  font-weight: 400;
+}
+
+#login-register .form-control {
+  margin: 20px 0;
+  background: transparent;
+  height: 50px;
+  border: 1px solid rgba(63, 63, 63, 0.5);
+  border-radius: 50px;
+  color: rgb(0, 0, 0) !important;
+}
+
+#login-register input:focus {
+  color: rgb(0, 0, 0) !important;
+  border: 1px solid rgba(63, 63, 63, 0.5) !important;
+  outline: 0 none !important;
+}
+
+#login-register input::placeholder {
+  color: rgba(0, 0, 0, .5) !important;
+}
+
+.box-btn {
+  height: 70px;
+  width: 100%;
+}
+
+#btn-login, #btn-register {
+  color: white;
+  border-radius: 30px;
+  background-image: linear-gradient(to right, rgb(68, 103, 216) 10%, rgba(60, 34, 107, 0.9) 100%);
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  transition: .5s;
+}
+
+#btn-login:hover, #btn-register:hover {
+  width: 106%;
+  transform: translate(-3%, -3px);
+  height: 56px;
+}
+
+.third-party {
+  margin-top: 30px;
+}
+
+#desc-login h1, #desc-register h1 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+#btn-login-to-register, #btn-register-to-login {
+  color: white;
+  border-radius: 30px;
+  width: 80%;
+  height: 50px;
+  margin-top: 30px;
+}

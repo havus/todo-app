@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="google-signin-client_id" content="969563348290-nj335ss942mrcf6kuselsacab05gu149.apps.googleusercontent.com">
+  <script src="https://kit.fontawesome.com/d00c61de42.js"></script>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/loading.css">
+  <title>Fancy Todo</title>
+</head>
+<body>
+
+  <div id="login-register">
+    <div id="login-register-box" class="row">
+      <div class="col-md-6" id="login-left">
+        <div id="login-box">
+          <header>
+            <h1 id="login-header">Sign In</h1>
+          </header>
+          <input class="form-control" type="text" name="loginEmail" placeholder="Email">
+          <input class="form-control" type="password" name="loginPassword" placeholder="Password">
+          <div class="box-btn">
+            <button class="btn btn-lg" id="btn-login">Login</button>
+          </div>
+          <div class="third-party">
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" id="register-left">
+        <div id="register-box">
+          <header>
+            <h1 id="register-header">Sign Up</h1>
+          </header>
+          <input class="form-control" type="text" name="registerUsername" placeholder="Fullname">
+          <input class="form-control" type="email" name="registerEmail" placeholder="Email">
+          <input class="form-control" type="password" name="registerPassword" placeholder="Password">
+          <div class="box-btn">
+            <button class="btn btn-lg" id="btn-register">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6" id="login-right">
+        <div id="desc-login">
+          <header>
+            <h1>Don't have an account?</h1>
+          </header>
+          <button class="btn btn-primary" id="btn-login-to-register">Register</button>
+        </div>
+      </div>
+      <div class="col-md-6" id="register-right">
+        <div id="desc-register">
+          <header>
+            <h1>Already have an account?</h1>
+          </header>
+          <button class="btn btn-primary" id="btn-register-to-login">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== DASHBOARD ============== -->
+
+  <div id="dashboard" class="row">
+    <div class="col-md-3" id="task-manager">
+      <div class="head-dashboard">
+        <header>
+          <h1>Task Manager</h1>
+        </header>
+      </div>
+      <div id="head-info">
+        <div id="profile-img-box">
+          <img src="" alt="profile_pic">
+        </div>
+        <div id="name">
+          <h4></h4>
+        </div>
+        <div id="email">
+          <p></p>
+        </div>
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#change-profile-modal">Change Profile Pic</button>
+        <div id="todo-info">
+          <div id="completed-task">
+            <h2></h2>
+            <p class="bold-info-todo">Completed</p>
+            <p class="thin-info-todo">Task today</p>
+          </div>
+          <div id="todo-task">
+            <h2></h2>
+            <p class="bold-info-todo">To-do</p>
+            <p class="thin-info-todo">Task today</p>
+          </div>
+          <div id="all-todo-task">
+            <h2></h2>
+            <p class="bold-info-todo">All</p>
+            <p class="thin-info-todo">Completed</p>
+          </div>
+        </div>
+      </div>
+      <div class="foot-dashboard">
+        <button type="button" class="btn btn-outline-primary" id="logout">Logout</button>
+      </div>
+    </div>
+    <div class="col-md-4" id="list-task">
+      <div class="head-dashboard">
+        <header>
+          <h1>List Todo</h1>
+        </header>
+        <!-- <input class="form-control" type="text"> -->
+        <!-- <button class="btn btn-outline-primary">Search</button> -->
+      </div>
+      <div id="box-list-task">
+        
+      </div>
+      <div class="foot-dashboard">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Task</button>
+      </div>
+    </div>
+    <div class="col-md-5" id="option-task">
+      <div class="head-dashboard">
+        <header>
+          <h1>Details</h1>
+        </header>
+        <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            All Task
+        </a> -->
+        <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div> -->
+      </div>      
+      <div id="head-option-task">
+        <div id="profile-option-task">
+          <div id="box-img-option-task">
+            <img src="" alt="">
+          </div>
+          <h5></h5>
+        </div>
+        <div id="box-edit-icon">
+          <i class="far fa-edit fa-lg" data-toggle="modal" data-target="#edit-modal"></i>
+        </div>
+        <div id="box-delete-icon">
+          <i class="fas fa-trash fa-lg"></i>
+        </div>
+      </div>
+      <div id="body-detail" class="row">
+        <div id="status-detail" class="col-md-2">
+          
+        </div>
+        <div class="col-md-8">
+          <div id="title-todo">
+
+          </div>
+          <div id="date-detail">
+            
+          </div>
+          <div id="description-detail">
+            
+          </div>
+        </div>
+      </div>
+      <div class="foot-dashboard">
+        <button type="button" class="btn btn-primary" id="done-task">Done Task</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== MODAL ============== -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">To do</span>
+            </div>
+            <input type="text" class="form-control" id="create-todo">
+          </div>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Desc</span>
+            </div>
+            <input type="text" class="form-control" id="create-desc">
+          </div>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Due_date</span>
+            </div>
+            <input class="datepicker form-control" type="date" id="create-date datepicker">
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" data-dismiss="modal" class="btn btn-primary" id="add-task" >Add Task</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="change-profile-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+        <form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+          <input type='file' name='image'/>
+        </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" data-dismiss="modal" class="btn btn-primary" id="change-img-profile">Change</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">To do</span>
+            </div>
+            <input type="text" class="form-control" id="edit-todo">
+          </div>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Desc</span>
+            </div>
+            <input type="text" class="form-control" id="edit-desc">
+          </div>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Due_date</span>
+            </div>
+            <input name="edit-date" class="form-control" type="date" id="edit-date" required>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" data-dismiss="modal" class="btn btn-primary" id="edit">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="loading-page"></div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="js/sweetalert2.js"></script>
+  <script src="js/function.js"></script>
+  <script src="js/main.js"></script>
+  
+</body>
+</html>

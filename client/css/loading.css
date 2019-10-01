@@ -1,0 +1,42 @@
+/* body{background:#000} */
+
+#loading-page,
+#loading-page:before,
+#loading-page:after {
+  display: block;
+	position: absolute;
+	z-index: 100;
+}
+
+#loading-page {
+  background-color: rgba(232, 235, 251, .4);
+  width: 100%;
+  height: 100% 
+}
+
+#loading-page:before,
+#loading-page:after {
+	top: 50%;
+	left: 50%;
+	content: "";
+	border-radius: 50%;
+	border: 4px solid #a3a3a3;
+	border-top-color: rgb(78, 119, 253);
+}
+
+#loading-page:before{
+	width: 200px;
+	height: 200px;
+	animation: loading 5s linear infinite
+}
+
+#loading-page:after{
+	width: 150px;
+	height: 150px;
+	animation: loading 5s linear infinite reverse
+	}
+
+@keyframes loading{
+	from {transform:translate(-50%,-50%) rotate(0deg)}
+	to {transform:translate(-50%,-50%) rotate(360deg)}
+}

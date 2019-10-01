@@ -1,0 +1,257 @@
+.col-md-3, .col-md-4, .col-md-5, .row {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.head-dashboard {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  background-color: white;
+  z-index: 2;
+}
+
+.head-dashboard::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  -webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+#task-manager h1, #list-task h1, #option-task h1 {
+  margin-top: 15px;
+  font-size: 21px;
+  font-weight: 500;
+  color: rgb(139, 143, 161);
+}
+
+#head-info {
+  top: 10%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile-img-box {
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin-top: 50px;
+}
+
+#profile-img-box img, #box-img-option-task img {
+  height: 100%;
+}
+#name {
+  margin-top: 20px;
+}
+#name h4 {
+  margin: 0;
+}
+#email {
+  color: rgb(149, 152, 167);
+}
+#todo-info {
+  padding: 0 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around
+}
+#todo-info {
+  margin-top: 30px;
+}
+#completed-task, #todo-task, #all-todo-task {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#head-info p, #head-info h2 {
+  margin: 0;
+}
+.bold-info-todo {
+  font-weight: 600;
+}
+.thin-info-todo {
+  font-weight: 400;
+  color: rgb(149, 152, 167);
+}
+
+#list-task {
+  position: relative;
+  /* background-color: yellow; */
+}
+
+.head-dashboard input {
+  width: 300px;
+  margin: 15px;
+}
+
+#box-list-task {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 77%;
+  top: 10%;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+.card {
+  background-color: transparent;
+}
+.card:hover {
+  background-color: white;
+  cursor: pointer;
+}
+.card-body {
+  align-items: center;
+  display: flex;
+}
+.fa-2x {
+  margin: 0 20px;
+}
+.fa-check-circle, .fa-edit {
+  color: rgb(78, 119, 253);
+}
+.fa-times-circle {
+  color: rgb(220, 53, 69);
+}
+.title-task {
+  font-weight: 500;
+  font-size: 18px;
+}
+.date-task, #date-detail {
+  color: rgb(149, 152, 167);
+  font-weight: 300;
+  font-size: 15px;
+}
+.foot-dashboard {
+  height: 13%;
+  /* background-color: black; */
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.foot-dashboard .btn {
+  border-radius: 50px;
+  padding: 10px 30px;
+}
+
+#option-task {
+  position: relative;
+}
+
+#head-option-task {
+  position: relative;
+  top: 10%;
+  height: 12%;
+  border-bottom: 1px solid rgba(149, 152, 167, .5);
+  display: flex;
+  align-items: center;
+}
+
+#profile-option-task {
+  padding-left: 40px;
+  height: 100%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+
+#box-img-option-task {
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+#box-edit-icon, #box-delete-icon {
+  overflow: hidden;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  transition: .3s;
+  border: 2px solid rgba(149, 152, 167, 0);
+}
+#box-edit-icon {
+  margin-right: 15px;
+  background-color: rgb(232, 235, 251);
+}
+#box-edit-icon:hover {
+  cursor: pointer;
+  background-color: rgb(78, 119, 253);
+}
+#box-edit-icon:hover .fa-edit {
+  color: white;
+}
+#box-delete-icon {
+  background-color: rgb(220, 53, 69);
+}
+#box-delete-icon .fa-trash {
+  color: rgb(255, 255, 255);
+}
+#box-delete-icon:hover {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border: 1.5px solid rgb(220, 53, 69);
+}
+#box-delete-icon:hover .fa-trash {
+  color: rgb(220, 53, 69);
+}
+.fa-edit {
+  width: 20px;
+  margin: 0;
+  transition: .3s;
+}
+
+#body-detail {
+  width: 100%;
+  height: 65%;
+  position: relative;
+  top: 10%;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#status-detail {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+#title-todo {
+  text-align: justify;
+  padding-top: 35px;
+  font-weight: 500;
+  font-size: 23px;
+}
+#date-detail {
+  margin-top: 7px;
+}
+.fa-clock {
+  margin-right: 5px;
+}
+#description-detail {
+  margin-top: 70px;
+  color: rgb(149, 152, 167);
+  border-bottom: 1px solid rgb(149, 152, 167);
+  padding-bottom: 70px;
+}
