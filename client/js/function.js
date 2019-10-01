@@ -19,9 +19,8 @@ function onSignIn(googleUser) {
     })
     .done(function(res) {
       $('#loading-page').hide();
-      console.log('okee', res);
       localStorage.setItem('token', res.token);
-      showDashboardPage(token);
+      showDashboardPage(res.token);
     })
     .fail(function(err) {
       $('#loading-page').hide();
@@ -69,7 +68,6 @@ function getProfile(token) {
     $('#profile-img-box img').attr('src', res.profile_pic);
     $('#box-img-option-task img').attr('src', res.profile_pic);
     $('#name h4').text(res.full_name);
-    console.log($('#profile-option-task #box-img-option-task h5').text());
     $('#box-img-option-task h5').text(res.full_name);
     $('#email p').text(res.email);
   })
@@ -119,7 +117,6 @@ function showDashboardPage(token) {
     $('#completed-task h2').text(completed);
     $('#todo-task h2').text(uncomplete);
     $('#all-todo-task h2').text(completed + uncomplete);
-    console.log(completed, uncomplete);
     cardClick();
     
     $('#box-delete-icon').on('click', function() {

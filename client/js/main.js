@@ -1,5 +1,5 @@
-// const baseUrl = "http://34.87.39.250";
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://34.87.39.250";
+// const baseUrl = "http://localhost:3000";
 
 $(document).ready(function() {
   $('#loading-page').hide();
@@ -82,7 +82,6 @@ $(document).ready(function() {
     .done(function(res) {
       $('#loading-page').hide();
       $('#profile-img-box img').attr('src', res.url);
-      console.log(res.url);
       $('input[name=image]').val('');
     })
     .fail(function() {
@@ -115,7 +114,6 @@ $(document).ready(function() {
           $(`.card[obj-id=${todo_id}] i`).attr('class', 'fas fa-check-circle fa-2x');
           $(`#status-detail i`).attr('class', 'fas fa-check-circle fa-2x');
           $('#done-task').attr("disabled", true);
-          console.log($(`.card[obj-id=${todo_id}] i`));
           let completeTask = $('#completed-task h2').html();
           $('#completed-task h2').html(+completeTask + 1);
           let todoTask = $('#todo-task h2').html();
@@ -176,7 +174,6 @@ $(document).ready(function() {
     let descEdit = $('#edit-desc').val();
     let dateEdit = $('#edit-date').val();
     let todo_id = $(this).attr('todo-id');
-    console.log(todoEdit, descEdit, dateEdit);
 
     $.ajax({
       method: "post",
