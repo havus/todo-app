@@ -1,5 +1,5 @@
+// const baseUrl = "http://34.87.39.250";
 const baseUrl = "http://localhost:3000";
-// const baseUrl = "https://fathomless-wildwood-80572.herokuapp.com";
 
 $(document).ready(function() {
   $('#loading-page').hide();

@@ -8,9 +8,8 @@ function signOut() {
 
 function onSignIn(googleUser) {
   const id_token = googleUser.getAuthResponse().id_token;
-  
   const token = localStorage.getItem('token');
-  
+
   if (!token) {
     $('#loading-page').show();
     $.ajax({
@@ -20,12 +19,13 @@ function onSignIn(googleUser) {
     })
     .done(function(res) {
       $('#loading-page').hide();
+      console.log('okee', res);
       localStorage.setItem('token', res.token);
       showDashboardPage(token);
     })
     .fail(function(err) {
       $('#loading-page').hide();
-      console.log(err, '<<<<<<<<<<<<<<<<< error');
+      console.log(err, '<<<<<<<<<<<<<<<<< error on signin');
     })
   }
 }

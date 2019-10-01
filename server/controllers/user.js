@@ -2,14 +2,14 @@ const User = require('../models/user');
 const {OAuth2Client} = require('google-auth-library');
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 const { jwtSign, jwtVerify } = require('../helper/jwt');
-const { hashPassword } = require('../helper/bcryptjs');
+const { hashPassword, verifyPassword } = require('../helper/bcryptjs');
 
 class UserController {
   static signIn(req, res, next) {
     const { email, password } = req.body;
     User.findOne({email})
     .then(one => {
-      if (one && one.password === hashPassword(password)) {
+      if (one && verifyPassword(password, one.password)) {
         const {username, full_name, email} = one;
         const token = jwtSign({username, full_name, email});
         res.status(200).json({token});
