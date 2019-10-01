@@ -6,7 +6,10 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGO_CONNECT_URL, {useNewUrlParser: true});
+mongoose.connect(process.env.MONGO_CONNECT_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 app.use(require('cors')());
 app.use(require('morgan')('dev'));
